@@ -11,12 +11,12 @@ class CardGame(BaseGame):
 	def __init__(self):
 		self.deck = Deck()
 
-	def draw(self, card_number=1, id=0):
+	def draw(self, member, card_number=1):
 		if card_number > len(self.deck.cards):
 			raise NoMoreCardsException()
 		self.deck.cards, picked_cards = self.deck.cards[card_number:], \
 										self.deck.cards[:card_number]
 		if id not in self.wands:
-			self.wands[id] = []
-		self.wands[id] += picked_cards
-		return self.wands[id]
+			self.wands[member] = []
+		self.wands[member] += picked_cards
+		return self.wands[member]

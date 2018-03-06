@@ -1,0 +1,5 @@
+# Pycache files
+_pycache__/*
+
+# Neo secret token
+neo_token.txt
